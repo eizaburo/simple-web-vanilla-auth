@@ -66,20 +66,22 @@ footer{
     text-align: center;
 }
 
-.login_form{
+/* form なるべくスタイル共通。微調整はインラインで。 */
+
+form{
     display: flex;
     flex-direction: column;
     width: 200px;
     gap: 10px;
 }
 
-.login_form input{
+form input{
     padding: 5px;
 }
 
-.login_form button{
+form button{
     padding: 5px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 #logout_button{
