@@ -40,6 +40,24 @@
     <footer>
         footer
     </footer>
+    <script>
+
+        // 基本要素の取得
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const full_name = document.getElementById("full_name");
+        const phone_no = document.getElementById("phone_no");
+        const entry_button = document.getElementById("entry_button");
+
+        // buttonのクリックイベント
+        entry_button.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            //サンプル処理
+            alert(`email=${email.value}, password=${password.value}, full_name=${full_name.value}, phone_no=${phone_no.value}`)
+        });
+
+    </script>
 </body>
 
 </html>
