@@ -35,7 +35,13 @@
     <footer>
         footer
     </footer>
-    <script>
+    <script type="module">
+
+        // import
+        import { app } from "./script.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+
+        const auth = getAuth();
 
         // 基本要素の取得
         const email = document.getElementById("email");
@@ -43,11 +49,17 @@
         const login_button = document.getElementById("login_button");
 
         // buttonのクリックイベント
-        login_button.addEventListener("click", (e) => {
+        login_button.addEventListener("click", async (e) => {
+            //標準動作（ページの移動）を防止
             e.preventDefault();
 
-            //サンプル処理
-            alert(`email=${email.value}, password=${password.value}`)
+            //ログイン処理
+            try {
+                await signInWithEmailAndPassword(auth, email.value, password.value);
+                location.href = "mypage.html";
+            } catch (e) {
+                alert(e.message);
+            }
         });
 
     </script>
